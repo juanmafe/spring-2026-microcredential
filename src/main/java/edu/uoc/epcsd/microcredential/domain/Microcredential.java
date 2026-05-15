@@ -1,39 +1,31 @@
 package edu.uoc.epcsd.microcredential.domain;
 
-import lombok.*;
-import lombok.experimental.SuperBuilder;
-import java.util.List;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import java.util.Date;
-import javax.validation.constraints.NotNull;
-import edu.uoc.epcsd.microcredential.domain.Microcredential;
-import edu.uoc.epcsd.microcredential.domain.MicrocredentialStatus;
+import java.util.Objects;
+import lombok.Builder;
 
-@ToString
-@Getter
-@Setter
-@EqualsAndHashCode
-@SuperBuilder
-@NoArgsConstructor
-@AllArgsConstructor
-public class Microcredential{
-
-    @NotNull
-    private Long id;
-
-    @NotNull
-    private Date submitDate;
-    
-    @NotNull
-    private Date assignmentDate;
-    
-    @NotNull
-    @Builder.Default
-    private MicrocredentialStatus status = MicrocredentialStatus.REQUESTED;
-    
-    @NotNull
-    private String content;
-        
-    @NotNull
-    private Long enrollment;
-
+/** The type Microcredential. */
+@Builder
+public record Microcredential(
+    @NotNull Long id,
+    @NotNull Date submitDate,
+    @NotNull Date assignmentDate,
+    @NotNull MicrocredentialStatus status,
+    @NotBlank String content,
+    @NotNull Long enrollment) {
+  /**
+   * Instantiates a new Microcredential.
+   *
+   * @param id the id
+   * @param submitDate the submit date
+   * @param assignmentDate the assignment date
+   * @param status the status
+   * @param content the content
+   * @param enrollment the enrollment
+   */
+  public Microcredential {
+    status = Objects.nonNull(status) ? status : MicrocredentialStatus.REQUESTED;
+  }
 }
