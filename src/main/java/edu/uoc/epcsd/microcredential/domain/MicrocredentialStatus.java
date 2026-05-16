@@ -8,5 +8,5 @@ public enum MicrocredentialStatus {
   /** Granted microcredential status. */
   GRANTED,
   /** Rejected microcredential status. */
-  REJECTED;
+  REJECTED
 }

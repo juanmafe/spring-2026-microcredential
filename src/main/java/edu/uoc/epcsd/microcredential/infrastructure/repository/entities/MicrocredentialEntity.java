@@ -8,37 +8,33 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import java.util.Date;
+import java.time.LocalDate;
 import lombok.*;
 
+/** The type Microcredential entity. */
 @Entity(name = "microcredential")
-@ToString
-@Getter
 @Setter
-@EqualsAndHashCode
-@Builder
+@Getter
 @NoArgsConstructor
-@AllArgsConstructor
 public class MicrocredentialEntity {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  @Column(name = "submitdate", nullable = true)
-  private Date submitDate;
+  @Column(name = "submitdate", nullable = false)
+  private LocalDate submitDate;
 
-  @Column(name = "assignmentdate", nullable = false)
-  private Date assignmentDate;
+  @Column(name = "assignmentdate")
+  private LocalDate assignmentDate;
 
   @Column(name = "enrollment", nullable = false)
   private Long enrollment;
 
-  @Column(name = "content", nullable = true)
+  @Column(name = "content")
   private String content;
 
   @Column(name = "status", nullable = false)
   @Enumerated(EnumType.STRING)
-  @Builder.Default
   private MicrocredentialStatus status = MicrocredentialStatus.REQUESTED;
 }

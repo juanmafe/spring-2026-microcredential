@@ -11,3 +11,7 @@
 ## 2026-05-15
 
 - First refactor normalizing project strcuture and including openapi
+
+## 2026-05-16
+
+- Fixes in model
