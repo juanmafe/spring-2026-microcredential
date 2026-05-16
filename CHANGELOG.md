@@ -15,3 +15,4 @@
 ## 2026-05-16
 
 - Fixes in model
+- Bruno api added
