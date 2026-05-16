@@ -17,3 +17,4 @@
 - Fixes in model
 - Bruno api added
 - Controllers and mappers added
+- Controllers and mappers tests
