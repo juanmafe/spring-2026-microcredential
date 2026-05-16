@@ -1,0 +1,12 @@
+# Ignore target directory
+/target/
+
+# IDE and OS files
+.idea/
+*.iml
+.classpath
+.project
+.DS_Store
+
+# Maven
+.mvn/
