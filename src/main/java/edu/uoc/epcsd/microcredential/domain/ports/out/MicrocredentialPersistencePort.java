@@ -1,6 +1,7 @@
 package edu.uoc.epcsd.microcredential.domain.ports.out;
 
 import edu.uoc.epcsd.microcredential.domain.Microcredential;
+import java.util.List;
 import java.util.Optional;
 import org.springframework.stereotype.Repository;
 
@@ -15,4 +16,36 @@ public interface MicrocredentialPersistencePort {
    * @return the by id
    */
   Optional<Microcredential> getById(Long microcredentialId);
+
+  /**
+   * Save microcredential.
+   *
+   * @param microcredential the microcredential
+   * @return the saved microcredential
+   */
+  Microcredential save(Microcredential microcredential);
+
+  /**
+   * Update status of a microcredential.
+   *
+   * @param microcredentialId the microcredential id
+   * @param approved whether to approve (true) or reject (false)
+   * @return the updated microcredential
+   */
+  Microcredential updateStatus(Long microcredentialId, boolean approved);
+
+  /**
+   * Find pending microcredentials.
+   *
+   * @return the list of pending microcredentials
+   */
+  List<Microcredential> findPending();
+
+  /**
+   * Find microcredentials by course id.
+   *
+   * @param courseId the course id
+   * @return the list of microcredentials for the course
+   */
+  List<Microcredential> findByCourseId(Long courseId);
 }

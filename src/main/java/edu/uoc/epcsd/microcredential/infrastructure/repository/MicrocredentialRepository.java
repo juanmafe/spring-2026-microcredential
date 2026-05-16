@@ -3,6 +3,7 @@ package edu.uoc.epcsd.microcredential.infrastructure.repository;
 import edu.uoc.epcsd.microcredential.domain.Microcredential;
 import edu.uoc.epcsd.microcredential.domain.ports.out.MicrocredentialPersistencePort;
 import edu.uoc.epcsd.microcredential.infrastructure.repository.springdata.MicrocredentialSpringData;
+import java.util.List;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -20,10 +21,27 @@ public class MicrocredentialRepository implements MicrocredentialPersistencePort
     return null;
   }
 
-  // TODO: createMicrocredential()
+  @Override
+  public Microcredential save(Microcredential microcredential) {
+    // TODO: Complete the implementation
+    return null;
+  }
 
-  // TODO: updateStatusPendingMicrocredential()
+  @Override
+  public Microcredential updateStatus(Long microcredentialId, boolean approved) {
+    // TODO: Complete the implementation
+    return null;
+  }
 
-  // TODO: getPendingMicrocredentialRequests()
+  @Override
+  public List<Microcredential> findPending() {
+    // TODO: Complete the implementation
+    return null;
+  }
 
+  @Override
+  public List<Microcredential> findByCourseId(Long courseId) {
+    // TODO: Complete the implementation
+    return null;
+  }
 }

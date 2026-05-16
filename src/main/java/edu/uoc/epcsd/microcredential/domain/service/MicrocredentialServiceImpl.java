@@ -1,6 +1,7 @@
 package edu.uoc.epcsd.microcredential.domain.service;
 
 import edu.uoc.epcsd.microcredential.domain.Microcredential;
+import edu.uoc.epcsd.microcredential.domain.ports.in.MicrocredentialPort;
 import edu.uoc.epcsd.microcredential.domain.ports.out.MicrocredentialPersistencePort;
 import edu.uoc.epcsd.microcredential.infrastructure.kafka.MicrocredentialMessage;
 import java.util.List;
@@ -14,7 +15,7 @@ import org.springframework.validation.annotation.Validated;
 @RequiredArgsConstructor
 @Service
 @Validated
-public class MicrocredentialServiceImpl implements MicrocredentialService {
+public class MicrocredentialServiceImpl implements MicrocredentialPort {
 
   private final MicrocredentialPersistencePort microcredentialPersistencePort;
   private final KafkaTemplate<String, MicrocredentialMessage> microcredentialKafkaTemplate;
@@ -29,7 +30,7 @@ public class MicrocredentialServiceImpl implements MicrocredentialService {
   }
 
   @Override
-  public Long requestMicrocredential(Microcredential microcredential) {
+  public Microcredential requestMicrocredential(Microcredential microcredential) {
     // TODO: Complete the implementation
     return null;
   }
@@ -47,7 +48,13 @@ public class MicrocredentialServiceImpl implements MicrocredentialService {
   }
 
   @Override
-  public List<Microcredential> requestCourseMicrocredentials(Long courseId) {
+  public List<Microcredential> getCourseMicrocredentials(Long courseId) {
+    // TODO: Complete the implementation
+    return null;
+  }
+
+  @Override
+  public List<Microcredential> getPendingMicrocredentials() {
     // TODO: Complete the implementation
     return null;
   }
