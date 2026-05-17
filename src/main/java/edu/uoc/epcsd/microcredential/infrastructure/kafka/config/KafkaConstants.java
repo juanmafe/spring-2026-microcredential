@@ -1,4 +1,4 @@
-package edu.uoc.epcsd.microcredential.infrastructure.kafka;
+package edu.uoc.epcsd.microcredential.infrastructure.kafka.config;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;

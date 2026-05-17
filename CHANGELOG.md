@@ -23,3 +23,4 @@
 
 - Fixes in api and services according to architecture model
 - Attending Kafka configuration
+- Kafka fixes according to accomplishment DIP

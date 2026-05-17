@@ -1,5 +1,6 @@
-package edu.uoc.epcsd.microcredential.infrastructure.kafka;
+package edu.uoc.epcsd.microcredential.infrastructure.kafka.config;
 
+import edu.uoc.epcsd.microcredential.infrastructure.kafka.messages.MicrocredentialMessage;
 import java.util.HashMap;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;

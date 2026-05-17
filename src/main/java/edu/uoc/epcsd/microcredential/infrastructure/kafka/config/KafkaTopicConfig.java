@@ -1,4 +1,4 @@
-package edu.uoc.epcsd.microcredential.infrastructure.kafka;
+package edu.uoc.epcsd.microcredential.infrastructure.kafka.config;
 
 import java.util.HashMap;
 import org.apache.kafka.clients.admin.AdminClientConfig;
