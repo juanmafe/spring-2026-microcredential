@@ -1,17 +1,8 @@
 package edu.uoc.epcsd.microcredential.infrastructure.kafka;
-import lombok.*;
 
-@ToString
-@Getter
-@Setter
-@EqualsAndHashCode
+import lombok.Builder;
+
+/** Kafka message carrying microcredential event data. */
 @Builder
-@AllArgsConstructor
-public class MicrocredentialMessage {
-
-    private Long microcredentialId;
-    private String userEmail;
-    private Long courseId;
-    private Long enrollment;
-
-}
+public record MicrocredentialMessage(
+    Long microcredentialId, String userEmail, Long courseId, Long enrollment) {}

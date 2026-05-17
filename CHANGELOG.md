@@ -22,3 +22,4 @@
 ## 2026-05-17
 
 - Fixes in api and services according to architecture model
+- Attending Kafka configuration
