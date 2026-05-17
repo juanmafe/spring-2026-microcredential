@@ -26,7 +26,7 @@ public class PostMicrocredentialController implements PostMicrocredentialsApi {
         this.microcredentialMapper.toDomain(createMicrocredentialRequestDto);
 
     final var createdMicrocredential =
-        this.microcredentialPort.requestMicrocredential(microcredential);
+        this.microcredentialPort.createMicrocredential(microcredential);
 
     final var microcredentialDto = this.microcredentialMapper.toApi(createdMicrocredential);
     final var createMicrocredentialResponseDto = new CreateMicrocredentialResponseDto();
@@ -35,4 +35,3 @@ public class PostMicrocredentialController implements PostMicrocredentialsApi {
     return ResponseEntity.status(HttpStatus.CREATED).body(createMicrocredentialResponseDto);
   }
 }
-

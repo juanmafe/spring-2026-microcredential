@@ -60,13 +60,12 @@ class GetMicrocredentialIdControllerTest {
     final var microcredentialId = Instancio.create(Long.class);
 
     // When
-    when(this.microcredentialPort.getMicrocredentialById(microcredentialId))
-        .thenReturn(Optional.empty());
+    when(this.microcredentialPort.getById(microcredentialId)).thenReturn(Optional.empty());
 
     this.mockMvc.perform(get(URL, microcredentialId)).andExpect(status().isNoContent());
 
     // Then
-    verify(this.microcredentialPort, times(1)).getMicrocredentialById(microcredentialId);
+    verify(this.microcredentialPort, times(1)).getById(microcredentialId);
     verifyNoInteractions(this.microcredentialMapper);
   }
 
@@ -83,7 +82,7 @@ class GetMicrocredentialIdControllerTest {
     final var microcredentialDto = Instancio.create(MicrocredentialDto.class);
 
     // When
-    when(this.microcredentialPort.getMicrocredentialById(microcredential.id()))
+    when(this.microcredentialPort.getById(microcredential.id()))
         .thenReturn(Optional.of(microcredential));
     when(this.microcredentialMapper.toApi(microcredential)).thenReturn(microcredentialDto);
 
@@ -91,7 +90,7 @@ class GetMicrocredentialIdControllerTest {
         this.mockMvc.perform(get(URL, microcredential.id())).andExpect(status().isOk());
 
     // Then
-    verify(this.microcredentialPort, times(1)).getMicrocredentialById(microcredential.id());
+    verify(this.microcredentialPort, times(1)).getById(microcredential.id());
     verify(this.microcredentialMapper, times(1)).toApi(microcredential);
     assertNotNull(response);
   }

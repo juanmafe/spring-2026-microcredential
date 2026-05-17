@@ -9,20 +9,20 @@ import java.util.Optional;
 public interface MicrocredentialPort {
 
   /**
-   * Gets microcredential by id.
+   * Get by id.
    *
    * @param microcredentialId the microcredential id
    * @return the microcredential by id
    */
-  Optional<Microcredential> getMicrocredentialById(@NotNull Long microcredentialId);
+  Optional<Microcredential> getById(@NotNull Long microcredentialId);
 
   /**
-   * Request microcredential.
+   * Create microcredential.
    *
    * @param microcredential the microcredential
    * @return the created microcredential
    */
-  Microcredential requestMicrocredential(@NotNull Microcredential microcredential);
+  Microcredential createMicrocredential(@NotNull Microcredential microcredential);
 
   /**
    * Approve pending microcredential.
@@ -41,18 +41,9 @@ public interface MicrocredentialPort {
   Microcredential rejectPendingMicrocredential(@NotNull Long microcredentialId);
 
   /**
-   * Get microcredentials for a course.
-   *
-   * @param courseId the course id
-   * @return the list of microcredentials for the course
-   */
-  List<Microcredential> getCourseMicrocredentials(@NotNull Long courseId);
-
-  /**
    * Get pending microcredentials.
    *
    * @return the list of pending microcredentials
    */
   List<Microcredential> getPendingMicrocredentials();
 }
-

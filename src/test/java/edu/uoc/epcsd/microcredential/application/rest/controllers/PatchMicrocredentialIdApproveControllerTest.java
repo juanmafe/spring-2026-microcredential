@@ -21,9 +21,9 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-/** The type Patch microcredential approve controller test. */
+/** The type Patch microcredential id approve controller test. */
 @ExtendWith(MockitoExtension.class)
-class PatchMicrocredentialApproveControllerTest {
+class PatchMicrocredentialIdApproveControllerTest {
 
   /** The Url. */
   static final String URL = "/microcredentials/{microcredentialId}/approve";
@@ -31,8 +31,8 @@ class PatchMicrocredentialApproveControllerTest {
   /** The Mock mvc. */
   MockMvc mockMvc;
 
-  /** The Patch microcredential approve controller. */
-  @InjectMocks PatchMicrocredentialApproveController patchMicrocredentialApproveController;
+  /** The Patch microcredential id approve controller. */
+  @InjectMocks PatchMicrocredentialIdApproveController patchMicrocredentialIdApproveController;
 
   /** The Microcredential port. */
   @Mock MicrocredentialPort microcredentialPort;
@@ -44,16 +44,16 @@ class PatchMicrocredentialApproveControllerTest {
   @BeforeEach
   void setUp() {
     this.mockMvc =
-        MockMvcBuilders.standaloneSetup(this.patchMicrocredentialApproveController).build();
+        MockMvcBuilders.standaloneSetup(this.patchMicrocredentialIdApproveController).build();
   }
 
   /**
-   * Test patch microcredential approve when success then return ok.
+   * Test patch microcredential id approve when success then return ok.
    *
    * @throws Exception the exception
    */
   @Test
-  void testPatchMicrocredentialApprove_whenSuccess_thenReturnOk() throws Exception {
+  void testPatchMicrocredentialIdApprove_whenSuccess_thenReturnOk() throws Exception {
 
     // Given
     final var microcredentialId = Instancio.create(Long.class);
@@ -74,4 +74,3 @@ class PatchMicrocredentialApproveControllerTest {
     assertNotNull(response);
   }
 }
-

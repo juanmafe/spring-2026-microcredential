@@ -69,7 +69,7 @@ class PostMicrocredentialControllerTest {
 
     // When
     when(this.microcredentialMapper.toDomain(requestDto)).thenReturn(microcredential);
-    when(this.microcredentialPort.requestMicrocredential(microcredential))
+    when(this.microcredentialPort.createMicrocredential(microcredential))
         .thenReturn(createdMicrocredential);
     when(this.microcredentialMapper.toApi(createdMicrocredential)).thenReturn(microcredentialDto);
 
@@ -83,7 +83,7 @@ class PostMicrocredentialControllerTest {
 
     // Then
     verify(this.microcredentialMapper, times(1)).toDomain(requestDto);
-    verify(this.microcredentialPort, times(1)).requestMicrocredential(microcredential);
+    verify(this.microcredentialPort, times(1)).createMicrocredential(microcredential);
     verify(this.microcredentialMapper, times(1)).toApi(createdMicrocredential);
     assertNotNull(response);
   }

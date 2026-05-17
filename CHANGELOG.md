@@ -18,3 +18,7 @@
 - Bruno api added
 - Controllers and mappers added
 - Controllers and mappers tests
+
+## 2026-05-17
+
+- Fixes in api and services according to architecture model

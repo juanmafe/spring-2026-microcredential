@@ -40,12 +40,4 @@ public interface MicrocredentialPersistencePort {
    * @return the list of pending microcredentials
    */
   List<Microcredential> findPending();
-
-  /**
-   * Find microcredentials by course id.
-   *
-   * @param courseId the course id
-   * @return the list of microcredentials for the course
-   */
-  List<Microcredential> findByCourseId(Long courseId);
 }

@@ -20,8 +20,7 @@ public class GetMicrocredentialIdController implements GetMicrocredentialsIdApi 
   public ResponseEntity<GetMicrocredentialIdResponseDto> getMicrocredentialsId(
       final Long microcredentialId) {
 
-    final var microcredential =
-        this.microcredentialPort.getMicrocredentialById(microcredentialId);
+    final var microcredential = this.microcredentialPort.getById(microcredentialId);
 
     if (microcredential.isEmpty()) {
       return ResponseEntity.noContent().build();
@@ -33,4 +32,3 @@ public class GetMicrocredentialIdController implements GetMicrocredentialsIdApi 
     return ResponseEntity.ok(getMicrocredentialIdResponseDto);
   }
 }
-

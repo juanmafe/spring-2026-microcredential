@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 /** The type Patch microcredential reject controller. */
 @RestController
 @RequiredArgsConstructor
-public class PatchMicrocredentialRejectController implements PatchMicrocredentialsIdRejectApi {
+public class PatchMicrocredentialIdRejectController implements PatchMicrocredentialsIdRejectApi {
 
   private final MicrocredentialPort microcredentialPort;
   private final MicrocredentialMapper microcredentialMapper;
@@ -30,4 +30,3 @@ public class PatchMicrocredentialRejectController implements PatchMicrocredentia
     return ResponseEntity.ok(rejectMicrocredentialIdResponseDto);
   }
 }
-
