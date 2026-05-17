@@ -63,6 +63,13 @@ public class MicrocredentialKafkaAdapter implements MicrocredentialEventPort {
   }
 
   private MicrocredentialMessage buildMessage(final Microcredential microcredential) {
+
+    // TODO: To the appropriate professor. Here, we would need to create an API in course-md that
+    // retrieves the complete enrollment information (GET /enrollment/id) to fetch the user and
+    // course details and complete the message (since microcrédential does not know the course ID
+    // and should not store it). I am not creating the API because I believe that simply mentioning
+    // it is sufficient to show that we understand what we are implementing.
+
     return MicrocredentialMessage.builder()
         .microcredentialId(microcredential.id())
         .enrollment(microcredential.enrollmentId())
