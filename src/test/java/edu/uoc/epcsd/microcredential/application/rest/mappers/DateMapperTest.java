@@ -13,7 +13,7 @@ import org.junit.jupiter.api.Test;
 class DateMapperTest {
 
   /** The Date mapper. */
-  DateMapper dateMapper = new DateMapper() {};
+  DateMapper dateMapper = new DateMapperFromRest() {};
 
   /** Test to api when local date is null then return null. */
   @Test

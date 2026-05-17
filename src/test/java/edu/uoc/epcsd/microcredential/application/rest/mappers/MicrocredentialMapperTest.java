@@ -36,9 +36,7 @@ class MicrocredentialMapperTest {
     final var submitDateOffset =
         microcredential.submitDate().atStartOfDay(ZoneId.systemDefault()).toOffsetDateTime();
     final var assignmentDateOffset =
-        microcredential.assignmentDate() != null
-            ? microcredential.assignmentDate().atStartOfDay(ZoneId.systemDefault()).toOffsetDateTime()
-            : null;
+        microcredential.assignmentDate().atStartOfDay(ZoneId.systemDefault()).toOffsetDateTime();
 
     // When
     when(this.dateMapper.toApi(microcredential.submitDate())).thenReturn(submitDateOffset);
@@ -60,7 +58,9 @@ class MicrocredentialMapperTest {
     assertEquals(microcredential.enrollmentId(), microcredentialDto.getEnrollmentId());
   }
 
-  /** Test to domain when create microcredential request dto provided then return microcredential. */
+  /**
+   * Test to domain when create microcredential request dto provided then return microcredential.
+   */
   @Test
   void testToDomain_whenCreateMicrocredentialRequestDtoProvided_thenReturnMicrocredential() {
 
@@ -81,4 +81,3 @@ class MicrocredentialMapperTest {
     assertEquals(requestDto.getEnrollmentId(), microcredential.enrollmentId());
   }
 }
-

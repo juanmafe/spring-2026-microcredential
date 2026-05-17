@@ -29,7 +29,7 @@ public class MicrocredentialEntity {
   private LocalDate assignmentDate;
 
   @Column(name = "enrollment", nullable = false)
-  private Long enrollment;
+  private Long enrollmentId;
 
   @Column(name = "content")
   private String content;

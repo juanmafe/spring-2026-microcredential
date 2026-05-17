@@ -22,8 +22,7 @@ public interface MicrocredentialMapper {
    */
   @Mapping(
       target = "status",
-      expression =
-          "java(MicrocredentialDto.StatusEnum.valueOf(microcredential.status().name()))")
+      expression = "java(MicrocredentialDto.StatusEnum.valueOf(microcredential.status().name()))")
   MicrocredentialDto toApi(Microcredential microcredential);
 
   /**
@@ -40,9 +39,5 @@ public interface MicrocredentialMapper {
    * @param createMicrocredentialRequestDto the create microcredential request dto
    * @return the microcredential
    */
-  @Mapping(target = "id", ignore = true)
-  @Mapping(target = "assignmentDate", ignore = true)
-  @Mapping(target = "status", ignore = true)
   Microcredential toDomain(CreateMicrocredentialRequestDto createMicrocredentialRequestDto);
 }
-
