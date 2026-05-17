@@ -10,7 +10,7 @@
 
 ## 2026-05-15
 
-- First refactor normalizing project strcuture and including openapi
+- First refactor normalizing project structure and including openapi
 
 ## 2026-05-16
 
