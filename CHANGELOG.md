@@ -24,3 +24,13 @@
 - Fixes in api and services according to architecture model
 - Attending Kafka configuration
 - Kafka fixes according to accomplishment DIP
+- Typo fixes
+- The previous implementation sent courseId + studentMail to POST /microcredentials,
+  which allowed arbitrary combinations of course and student data to be trusted
+  without validation. Replaced with enrollmentId as the sole source of truth,
+  since an enrollment already encodes the verified student-course relationship.
+- Security: by passing only enrollmentId, the microcredential service cannot
+  receive mismatched course/student data. The Kafka notification messages
+  intentionally leave userEmail and courseId as null until the Notification
+  service resolves them from the enrollmentId via the Course service,
+  avoiding propagation of unverified data through the event pipeline.
